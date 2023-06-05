@@ -46,7 +46,7 @@ fn main() {
 
     let current_accumulator = BatchedAccumulator::deserialize(
         &challenge_readable_map,
-        CheckForCorrectness::Yes,
+        CheckForCorrectness::No,
         UseCompression::No,
         &parameters,
     )
