@@ -59,7 +59,7 @@ fn main() {
 
     // Create the parameters for various 2^m circuit depths.
     let max_degree = log_2(current_accumulator.tau_powers_g2.len() as u64);
-    for m in max_degree..=max_degree {
+    for m in 0..=max_degree {
         let paramname = format!("phase1radix2m{}", m);
         println!("Creating {}", paramname);
 
