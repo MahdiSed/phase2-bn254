@@ -77,7 +77,7 @@ use super::utils::*;
 
 /// MPC parameters are just like bellman `Parameters` except, when serialized,
 /// they contain a transcript of contributions at the end, which can be verified.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct MPCParameters {
     params: Parameters<Bn256>,
     cs_hash: [u8; 64],

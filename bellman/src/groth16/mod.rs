@@ -97,7 +97,7 @@ impl<E: Engine> Proof<E> {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct VerifyingKey<E: Engine> {
     // alpha in g1 for verifying and for creating A/C elements of
     // proof. Never the point at infinity.
@@ -212,7 +212,7 @@ impl<E: Engine> VerifyingKey<E> {
     }
 }
 
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Parameters<E: Engine> {
     pub vk: VerifyingKey<E>,
 

@@ -26,7 +26,7 @@ pub struct PrivateKey {
 
 /// This allows others to verify that you contributed. The hash produced
 /// by `MPCParameters::contribute` is just a BLAKE2b hash of this object.
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct PublicKey {
     /// This is the delta (in G1) after the transformation, kept so that we
     /// can check correctness of the public keys without having the entire

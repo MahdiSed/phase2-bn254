@@ -20,12 +20,15 @@ fn main() {
 
     // Import the circuit and create the initial parameters using phase 1
     println!("Creating initial parameters for {}...", circuit_filename);
-    let params = {
+    let params: MPCParameters = {
         let c = circuit_from_json_file(&circuit_filename);
         MPCParameters::new(c, should_filter_points_at_infinity, radix_directory).unwrap()
     };
 
+    println!("{:?}", params.get_params());
+
     println!("Writing initial parameters to {}.", params_filename);
     let mut f = File::create(params_filename).unwrap();
     params.write(&mut f).expect("unable to write params");
+    //let mut data = MPCParameters::read(&f, false, false).expect("unable to read params");
 }
